@@ -13,3 +13,4 @@ status = prob.solve()
 
 print(LpStatus[status])
 print(value(x))
+print(value(y))
