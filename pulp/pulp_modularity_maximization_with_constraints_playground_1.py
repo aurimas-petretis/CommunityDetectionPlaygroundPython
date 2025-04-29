@@ -18,14 +18,14 @@ for i in G.nodes:
         if i < j:
             x[i, j] = pulp.LpVariable(f"x_{i}_{j}", 0, 1, pulp.LpBinary)
 
-# Force at least two communities by preventing a single complete group
-prob += pulp.lpSum(x[i, j] for (i, j) in x) <= (n * (n - 1)) // 2 - 1
+# limitation on node pairs within the same cluster
+prob += pulp.lpSum(x[i, j] for (i, j) in x) <= n
 
 # Objective function: sum over all pairs (i < j)
 Q = pulp.lpSum(
     (G.has_edge(i, j) - degrees[i] * degrees[j] / (2 * m)) * x[i, j]
     for i in G.nodes for j in G.nodes if i < j
-)
+)/(2*m)
 prob += Q
 
 # Optional: transitivity constraints (if desired for consistency)

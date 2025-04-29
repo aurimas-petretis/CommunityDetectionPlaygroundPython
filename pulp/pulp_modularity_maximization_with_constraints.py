@@ -4,35 +4,54 @@ import matplotlib.pyplot as plt
 
 # Load graph
 graph = ig.Graph.Famous("Zachary")
-n = graph.vcount()
-m = graph.ecount()
-degrees = graph.degree()
 A = graph.get_adjacency()
 edges = graph.get_edgelist()
 nodes = range(n)
 n_clusters = 5
 cluster_ids = range(n_clusters)
 
+G = graph
+n = graph.vcount()
+m = graph.ecount()
+degrees = graph.degree()
+
 prob = LpProblem("myModularityMaximization", LpMaximize)
 xnc = LpVariable.dicts("x", (nodes, cluster_ids), cat='Binary')
 # used_clusters = LpVariable.dicts("used", cluster_ids, cat='Binary')
 
-# TODO fix
-def kronecker(i, j):
-    for c in cluster_ids:
-        if xnc[i][c] == xnc[j][c] == 1:
-            return 1
-    return 0
+# Binary variables: x_ij = 1 if i and j are in the same community
+x = {}
+for i in G.nodes:
+    for j in G.nodes:
+        if i < j:
+            x[i, j] = pulp.LpVariable(f"x_{i}_{j}", 0, 1, pulp.LpBinary)
 
-B = {(i, j): A[i][j] - degrees[i]*degrees[j]/(2*m) for i in range(n) for j in range(i+1, n)}
-prob += lpSum(B[i, j] * kronecker(i, j) for i in range(n) for j in range(i+1, n))
+# limitation on node pairs within the same cluster
+prob += pulp.lpSum(x[i, j] for (i, j) in x) <= 40
 
-# set the first node to cluster 0 to constrain starting point
-prob += xnc[0][0] == 1
+# # TODO fix
+# def kronecker(i, j):
+#     for c in cluster_ids:
+#         if xnc[i][c] == xnc[j][c] == 1:
+#             return 1
+#     return 0
+#
+# B = {(i, j): A[i][j] - degrees[i]*degrees[j]/(2*m) for i in range(n) for j in range(i+1, n)}
+# prob += lpSum(B[i, j] * kronecker(i, j) for i in range(n) for j in range(i+1, n))
+#
+# # set the first node to cluster 0 to constrain starting point
+# prob += xnc[0][0] == 1
+#
+# # Every node uses one color
+# for n in nodes:
+#     prob += lpSum([xnc[n][c] for c in cluster_ids]) == 1
 
-# Every node uses one color
-for n in nodes:
-    prob += lpSum([xnc[n][c] for c in cluster_ids]) == 1
+# Objective function: sum over all pairs (i < j)
+Q = pulp.lpSum(
+    (G.has_edge(i, j) - degrees[i] * degrees[j] / (2 * m)) * x[i, j]
+    for i in G.nodes for j in G.nodes if i < j
+)
+prob += Q
 
 prob.solve()
 
