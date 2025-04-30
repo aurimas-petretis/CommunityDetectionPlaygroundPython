@@ -67,10 +67,10 @@ for k, v in solution.items():
     x[k].setInitialValue(v)
 
 solver = pulp.PULP_CBC_CMD(msg=True, warmStart=True)
-# solver = pulp.CPLEX_CMD(msg=True, warmStart=True)
-# solver = pulp.GUROBI_CMD(msg=True, warmStart=True)
-# solver = pulp.CPLEX_PY(msg=True, warmStart=True)
-# solver = pulp.GUROBI(msg=True, warmStart=True)
+# solver = pulp_playground.CPLEX_CMD(msg=True, warmStart=True)
+# solver = pulp_playground.GUROBI_CMD(msg=True, warmStart=True)
+# solver = pulp_playground.CPLEX_PY(msg=True, warmStart=True)
+# solver = pulp_playground.GUROBI(msg=True, warmStart=True)
 seating_model.solve(solver)
 
 

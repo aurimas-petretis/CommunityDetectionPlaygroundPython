@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dff429e-7813-461c-9f0a-8cfb00a7d4d9" name="Changes" comment="modularity maximization by using pulp (in progress)">
-      <change afterPath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_playground_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_saved.py" afterDir="false" />
+    <list default="true" id="9dff429e-7813-461c-9f0a-8cfb00a7d4d9" name="Changes" comment="modularity maximization by using pulp">
+      <change beforePath="$PROJECT_DIR$/.idea/networkClusteringPlayground.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CommunityDetectionPlaygroundPython.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_trying_out.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_playground_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modularity_maximization_with_constraints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_env_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_env_variables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_graph_coloring.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_graph_coloring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_modularity_maximization_with_constraints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_playground_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_modularity_maximization_with_constraints_playground_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_playground_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_modularity_maximization_with_constraints_playground_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_modularity_maximization_with_constraints_saved.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_modularity_maximization_with_constraints_saved.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_set_partitioning_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_set_partitioning_example.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/pulp_simple_example.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp_playground/pulp_simple_example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,39 +47,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Doctests in pulp.executor": "Run",
-    "Python.german_bus_network_playground.executor": "Run",
-    "Python.igraph_playground.executor": "Debug",
-    "Python.linear_optimization.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.modularity_maximization_with_constraints.executor": "Run",
-    "Python.networkx-playground.executor": "Debug",
-    "Python.networkx_playground.executor": "Run",
-    "Python.pulp_env_variables.executor": "Run",
-    "Python.pulp_graph_coloring.executor": "Run",
-    "Python.pulp_modularity_maximization.executor": "Debug",
-    "Python.pulp_modularity_maximization_test.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints_playground_1.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints_playground_2.executor": "Debug",
-    "Python.pulp_modularity_maximization_with_constraints_trying_out.executor": "Run",
-    "Python.pulp_playground.executor": "Run",
-    "Python.pulp_set_partitioning_example.executor": "Run",
-    "Python.pulp_simple_example.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/aurim/PycharmProjects/networkClusteringPlayground/pulp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Doctests in pulp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.german_bus_network_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.igraph_playground.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.linear_optimization.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_with_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python.networkx-playground.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.networkx_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_env_variables.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_graph_coloring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pulp_modularity_maximization_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_playground_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_playground_2.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_trying_out.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_set_partitioning_example.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_simple_example.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aurim/PycharmProjects/networkClusteringPlayground/pulp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aurim\PycharmProjects\networkClusteringPlayground\pulp" />
@@ -80,6 +87,163 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aurim\PycharmProjects\networkClusteringPlayground\pulp" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="CommunityDetectionPlaygroundPython" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -120,7 +284,8 @@
       <workItem from="1745783288576" duration="1848000" />
       <workItem from="1745830020206" duration="12688000" />
       <workItem from="1745934898035" duration="1021000" />
-      <workItem from="1745961571454" duration="3555000" />
+      <workItem from="1745961571454" duration="3585000" />
+      <workItem from="1746003293199" duration="436000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit + example files">
       <option name="closed" value="true" />
@@ -154,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745935918856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modularity maximization by using pulp">
+      <option name="closed" value="true" />
+      <created>1745965706323</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745965706323</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,7 +349,8 @@
     <MESSAGE value="introduced pulp framework and added more examples" />
     <MESSAGE value="more stuff on pulp playground" />
     <MESSAGE value="modularity maximization by using pulp (in progress)" />
-    <option name="LAST_COMMIT_MESSAGE" value="modularity maximization by using pulp (in progress)" />
+    <MESSAGE value="modularity maximization by using pulp" />
+    <option name="LAST_COMMIT_MESSAGE" value="modularity maximization by using pulp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

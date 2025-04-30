@@ -34,7 +34,7 @@ prob += Q
 
 # Constraint: ensure at least two communities (not all nodes same)
 prob += pulp.lpSum(same_comm[i, j] for i in G.nodes for j in G.nodes if i < j) <= (n * (n - 1)) // 2 - 1
-# prob += pulp.lpSum(same_comm[i, j] for i in G.nodes for j in G.nodes if i < j) <= 5
+# prob += pulp_playground.lpSum(same_comm[i, j] for i in G.nodes for j in G.nodes if i < j) <= 5
 
 # Solve the problem
 prob.solve()
