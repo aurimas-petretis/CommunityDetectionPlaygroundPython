@@ -15,32 +15,31 @@ def create_lp_problem():
    return pulp.LpProblem("ModularityMaximization", pulp.LpMaximize)
 
 
-def define_variable_on_each_vertex_pair(G):
+def define_variable_on_each_vertex_pair(G, c):
     x = {}
     for i in G.nodes:
-        for j in G.nodes:
-            if i < j:
-                x[i, j] = pulp.LpVariable(f"x_{i}_{j}", 0, 1, pulp.LpBinary)
+        for ci in range(c):
+            x[i, ci] = pulp.LpVariable(f"x_{i}_{ci}", 0, 1, pulp.LpBinary)
     return x
 
 
-def define_objective(prob, G, m, degrees, x):
+def define_objective(prob, G, m, degrees, x, c):
     Q = pulp.lpSum(
-        (G.has_edge(i, j) - degrees[i] * degrees[j] / (2 * m)) * x[i, j]
+        (G.has_edge(i, j) - degrees[i] * degrees[j] / (2 * m)) * vertex_pair_belongs_to_the_same_cluster(x, i, j, c)
         for i in G.nodes for j in G.nodes if i < j
     )/(2*m)
     prob += Q
     return prob
 
+def vertex_pair_belongs_to_the_same_cluster(x, i, j, c):
+    for ci in range(c):
+        if x[i, ci] == x[j, ci]:
+            return 1
+    return 0
+
 
 def define_constraints(prob, x):
-    # constraint 1: there should be no more than b1 detected vertex pairs
-    # TODO make b1 variable depend on graph size
-    # TODO it would be better to transform this constraint to check how many communities are needed,
-    #  it's difficult to determine what current formulation does represent because some some edges form cycles,
-    #  might be solvable by adding another constraint
-    b1 = 42
-    prob += pulp.lpSum(x[i, j] for (i, j) in x) <= b1
+    # TODO add constraints
     return prob
 
 
@@ -57,8 +56,8 @@ def print_status(prob, x, communities):
 
 def extract_communities(x, G):
     from collections import defaultdict
-
-    # Build communities using connected components from x[i,j]
+    print('Solution', x.items())
+    # Build communities using vertex to cluster assignments from x[i,ci]
     pair_graph = nx.Graph()
     pair_graph.add_nodes_from(G.nodes)
     for (i, j), var in x.items():
@@ -88,9 +87,10 @@ def draw_solution(G, communities):
 
 def main():
     G, n, m, degrees = get_zachary_graph()
-    x = define_variable_on_each_vertex_pair(G)
+    c = 4
+    x = define_variable_on_each_vertex_pair(G, c)
     prob = create_lp_problem()
-    prob = define_objective(prob, G, m, degrees, x)
+    prob = define_objective(prob, G, m, degrees, x, c)
     prob = define_constraints(prob, x)
 
     prob.solve()
