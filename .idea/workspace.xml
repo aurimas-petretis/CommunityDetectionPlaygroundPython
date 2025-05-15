@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dff429e-7813-461c-9f0a-8cfb00a7d4d9" name="Changes" comment="refactor and tidy up modularity maximization solving file">
-      <change afterPath="$PROJECT_DIR$/pulp/modularity_maximization_with_must_link_cannot_link_constraints.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pulp_modularity_maximization_playground/modularity_maximization_another_try.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pulp_modularity_maximization_playground/modularity_maximization_with_constraints_known_community_size.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pulp_modularity_maximization_playground/modularity_maximization_with_constraints_my_known_communities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pulp_playground/modularity_test.py" afterDir="false" />
+    <list default="true" id="9dff429e-7813-461c-9f0a-8cfb00a7d4d9" name="Changes" comment="more trying out, added must-link and cannot-link constraints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pulp/modularity_maximization_with_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp/modularity_maximization_with_constraints.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pulp/modularity_maximization_with_must_link_cannot_link_constraints.py" beforeDir="false" afterPath="$PROJECT_DIR$/pulp/modularity_maximization_with_must_link_cannot_link_constraints.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,45 +37,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Doctests in pulp.executor": "Run",
-    "Python.german_bus_network_playground.executor": "Run",
-    "Python.igraph_playground.executor": "Debug",
-    "Python.linear_optimization.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.modularity_maximization_another_try.executor": "Run",
-    "Python.modularity_maximization_with_constraints.executor": "Run",
-    "Python.modularity_maximization_with_constraints_known_community_size.executor": "Run",
-    "Python.modularity_maximization_with_constraints_my_known_communities.executor": "Run",
-    "Python.modularity_maximization_with_must_link_cannot_link_constraints.executor": "Run",
-    "Python.modularity_test.executor": "Run",
-    "Python.networkx-playground.executor": "Debug",
-    "Python.networkx_playground.executor": "Run",
-    "Python.pulp_env_variables.executor": "Run",
-    "Python.pulp_graph_coloring.executor": "Run",
-    "Python.pulp_modularity_maximization.executor": "Debug",
-    "Python.pulp_modularity_maximization_test.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints_playground_1.executor": "Run",
-    "Python.pulp_modularity_maximization_with_constraints_playground_2.executor": "Debug",
-    "Python.pulp_modularity_maximization_with_constraints_trying_out.executor": "Run",
-    "Python.pulp_playground.executor": "Run",
-    "Python.pulp_set_partitioning_example.executor": "Run",
-    "Python.pulp_simple_example.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/aurim/PycharmProjects/CommunityDetectionPlaygroundPython/pulp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Doctests in pulp.executor&quot;: &quot;Run&quot;,
+    &quot;Python.german_bus_network_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.igraph_playground.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.linear_optimization.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_another_try.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_with_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_with_constraints_known_community_size.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_with_constraints_my_known_communities.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_maximization_with_must_link_cannot_link_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modularity_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.networkx-playground.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.networkx_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_env_variables.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_graph_coloring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pulp_modularity_maximization_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_playground_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_playground_2.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.pulp_modularity_maximization_with_constraints_trying_out.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_playground.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_set_partitioning_example.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pulp_simple_example.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aurim/PycharmProjects/CommunityDetectionPlaygroundPython/pulp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aurim\PycharmProjects\CommunityDetectionPlaygroundPython\pulp" />
@@ -141,7 +136,9 @@
       <workItem from="1746895859707" duration="40000" />
       <workItem from="1747131877344" duration="14494000" />
       <workItem from="1747215598122" duration="291000" />
-      <workItem from="1747215897749" duration="810000" />
+      <workItem from="1747215897749" duration="5313000" />
+      <workItem from="1747230033676" duration="2081000" />
+      <workItem from="1747339258760" duration="644000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit + example files">
       <option name="closed" value="true" />
@@ -191,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746009987957</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="more trying out, added must-link and cannot-link constraints">
+      <option name="closed" value="true" />
+      <created>1747216757080</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747216757080</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +220,8 @@
     <MESSAGE value="modularity maximization by using pulp (in progress)" />
     <MESSAGE value="modularity maximization by using pulp" />
     <MESSAGE value="refactor and tidy up modularity maximization solving file" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor and tidy up modularity maximization solving file" />
+    <MESSAGE value="more trying out, added must-link and cannot-link constraints" />
+    <option name="LAST_COMMIT_MESSAGE" value="more trying out, added must-link and cannot-link constraints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,6 +230,11 @@
           <url>file://$PROJECT_DIR$/networkx_playground.py</url>
           <line>45</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python312/Lib/site-packages/networkx/generators/random_graphs.py</url>
+          <line>1055</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -253,7 +264,7 @@
     <SUITE FILE_PATH="coverage/networkClusteringPlayground$modularity_maximization_with_constraints.coverage" NAME="modularity_maximization_with_constraints Coverage Results" MODIFIED="1745845023841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/networkClusteringPlayground$main.coverage" NAME="main Coverage Results" MODIFIED="1735649461563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CommunityDetectionPlaygroundPython$modularity_maximization_another_try.coverage" NAME="modularity_maximization_another_try Coverage Results" MODIFIED="1747139325397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />
-    <SUITE FILE_PATH="coverage/CommunityDetectionPlaygroundPython$modularity_maximization_with_must_link_cannot_link_constraints.coverage" NAME="modularity_maximization_with_must_link_cannot_link_constraints Coverage Results" MODIFIED="1747161691592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />
+    <SUITE FILE_PATH="coverage/CommunityDetectionPlaygroundPython$modularity_maximization_with_must_link_cannot_link_constraints.coverage" NAME="modularity_maximization_with_must_link_cannot_link_constraints Coverage Results" MODIFIED="1747231933471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />
     <SUITE FILE_PATH="coverage/networkClusteringPlayground$pulp_modularity_maximization_test.coverage" NAME="pulp_modularity_maximization_test Coverage Results" MODIFIED="1745836190878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />
     <SUITE FILE_PATH="coverage/networkClusteringPlayground$pulp_simple_example.coverage" NAME="pulp_simple_example Coverage Results" MODIFIED="1745784744429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />
     <SUITE FILE_PATH="coverage/networkClusteringPlayground$pulp_playground.coverage" NAME="pulp_playground Coverage Results" MODIFIED="1745660351398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pulp" />

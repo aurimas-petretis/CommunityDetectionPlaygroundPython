@@ -1,3 +1,5 @@
+import random
+
 import pulp
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -9,6 +11,16 @@ def get_zachary_graph():
     m = G.number_of_edges()
     degrees = dict(G.degree)
     return G, n, m, degrees
+
+def get_zachary_example_must_link_cannot_link_constraints():
+    # must_link = [(0, 5), (0, 31)]
+    # cannot_link = [(31, 33)]
+    # must_link = [(0, 31)]
+    # cannot_link = []
+    # must_link = []
+    # cannot_link = [(24, 31)]
+    # return must_link, cannot_link
+    return [], []
 
 
 def create_lp_problem():
@@ -34,16 +46,17 @@ def define_objective(prob, G, m, degrees, x):
 
 
 def define_constraints(prob, G, x, n, must_link, cannot_link):
-    # # constraint 0: ensured transitivity
-    # for k in range(n):
-    #     for j in range(k):
-    #         for i in range(j):
-    #             prob += x[i, j] + x[j, k] - x[i, k] >= 0
-    #             prob += x[i, j] - x[j, k] + x[i, k] >= 0
-    #             prob += -x[i, j] + x[j, k] + x[i, k] >= 0
+    # constraint 0: ensured transitivity
+    for k in range(n):
+        for j in range(k):
+            for i in range(j):
+                prob += x[i, j] + x[j, k] - x[i, k] >= 0
+                prob += x[i, j] - x[j, k] + x[i, k] >= 0
+                prob += -x[i, j] + x[j, k] + x[i, k] >= 0
 
     # constraint 1: there should be no more than b1 detected vertex pairs
-    b1 = n
+    # b1 = n
+    b1 = n - 2
     prob += pulp.lpSum(x[i, j] for (i, j) in x) <= b1
 
     # constraint 2: vertex pairs must end up in the same cluster
@@ -66,6 +79,7 @@ def print_status(prob, x, communities):
             pairs[(i, j)] = pulp.value(var)
     print("Found vertex pairs:", pairs)
     print("Communities:", communities)
+    print("Community number: ", len(communities))
 
 
 def extract_communities(x, G):
@@ -120,16 +134,9 @@ def draw_solution(G, communities, must_link, cannot_link):
     plt.show()
 
 
-def main():
+def run_zachary_example():
     G, n, m, degrees = get_zachary_graph()
-    # must_link = [(0, 5), (0, 31)]
-    # cannot_link = [(31, 33)]
-    must_link, cannot_link = [], []
-    # must_link = [(0, 31)]
-    # cannot_link = []
-    must_link = []
-    cannot_link = [(24, 31)]
-    print(n, m, must_link, cannot_link, degrees)
+    must_link, cannot_link = get_zachary_example_must_link_cannot_link_constraints()
     x = define_variable_on_each_vertex_pair(G)
     prob = create_lp_problem()
     prob = define_objective(prob, G, m, degrees, x)
@@ -140,6 +147,70 @@ def main():
     communities = extract_communities(x, G)
     print_status(prob, x, communities)
     draw_solution(G, communities, must_link, cannot_link)
+
+
+def run_uniform_experiment():
+    n = 10
+    p = 0.5
+    for mlc in range(0, 2):
+        for i in range(1):
+            G = nx.gnp_random_graph(n, p)
+            n = len(G.nodes)
+            m = G.number_of_edges()
+            degrees = dict(G.degree)
+
+            must_link = []
+            cannot_link = [] # unused for now
+            for mli in range(mlc):
+                must_link.append(random.choice([e for e in G.edges]))
+            x = define_variable_on_each_vertex_pair(G)
+            prob = create_lp_problem()
+            prob = define_objective(prob, G, m, degrees, x)
+            prob = define_constraints(prob, G, x, n, must_link, cannot_link)
+
+            prob.solve()
+
+            communities = extract_communities(x, G)
+            print_status(prob, x, communities)
+            draw_solution(G, communities, must_link, cannot_link)
+
+
+def run_powerlaw_experiment():
+    n = 15
+    mg = 3
+    p = 0.8
+    for mlc in range(0, 2):
+        for i in range(1):
+            G = nx.powerlaw_cluster_graph(n, mg, p)
+            # G = nx.hoffman_singleton_graph(n, p)
+            n = len(G.nodes)
+            m = G.number_of_edges()
+            degrees = dict(G.degree)
+
+            must_link = []
+            cannot_link = [] # unused for now
+            for mli in range(mlc):
+                must_link.append(random.choice([e for e in G.edges]))
+            x = define_variable_on_each_vertex_pair(G)
+            prob = create_lp_problem()
+            prob = define_objective(prob, G, m, degrees, x)
+            prob = define_constraints(prob, G, x, n, must_link, cannot_link)
+
+            prob.solve()
+
+            communities = extract_communities(x, G)
+            print_status(prob, x, communities)
+            draw_solution(G, communities, must_link, cannot_link)
+
+
+def main():
+    print('main')
+    # run_zachary_example()
+    # run_uniform_experiment()
+    # run_powerlaw_experiment()
+    # TODO choose good graph generation solution
+    # https://networkx.org/documentation/stable/reference/generated/networkx.generators.community.LFR_benchmark_graph.html
+    # https://networkx.org/documentation/stable/reference/generated/networkx.generators.community.gaussian_random_partition_graph.html
 
 
 main()
